@@ -1,0 +1,506 @@
+body {
+	@include scroll-bar;
+	&::-webkit-scrollbar {
+		width: 10px
+	}
+	&.cms-faq{
+		.question{  cursor: pointer;  }
+		.question + div{
+			display: none;
+		}
+	}
+	&.cms-page-view, &.customer-account, &.cms-index-noroute, &.customer-account-login, &.customer-account-forgotpassword {
+		.col-main {
+			a:not(.button), a:not(.btn-remove), a:not(.logo) {
+				@include text-decoration;
+			}
+			a.button:after{  display: none !important;  }
+		}
+		.std {
+			h1, h2, h3, h4 {
+				color: #666666;
+				font-weight: bold;
+				margin: 10px 0;
+			}
+			p{
+				line-height: 1.6em;
+			}
+		}
+		.vc_col-sm-3 {
+			float: left;
+			width: 25%;
+			@include smmax($smmax) {
+				float: none;
+			}
+		}
+		.vc_col-sm-6 {
+			float: left;
+			width: 50%;
+			@include smmax($smmax) {
+				float: none;
+			}
+		}
+		.vc_col-sm-9 {
+			float: left;
+			width: 75%;
+			@include smmax($smmax) {
+				float: none;
+			}
+		}
+		.vc_col-sm-8 {
+			max-width: 960px;
+			margin: 0 auto;
+		}
+		.vc_col-sm-12{
+			max-width: 1260px;
+			margin: 0 auto;
+			//padding-left: 30px;
+		}
+	}
+	&.cms-how-it-works-buy-to-rent, &.cms-how-it-works-rent-a-bag {
+		.main-container{
+			max-width: inherit;
+			margin: 0;
+			padding: 0;
+		}
+		.breadcrumbs{
+			max-width: 1260px;
+			margin: 15px auto;
+			padding-left: 30px;
+		}
+		p, .std p {
+			font-style: normal;
+		}
+		.std a:after{  display: none !important;  }
+		h1 {
+			margin-bottom: 40px;
+			text-align: center;
+			font-size: 47px;
+			font-weight: normal;
+			font-family: "MuseoSansRegular", sans-serif;
+		}
+		.row{  clear: both;  overflow: hidden;  }
+		.head, .head1 {
+			text-align: center;
+			.five {
+				display: inline-block;
+				width: 240px;
+				vertical-align: top;
+				text-align: center;
+				margin-left: -5px;
+				img {
+					margin: 0 auto;
+				}
+			}
+		}
+		.head1 .five {
+			width: 300px;
+		}
+		a.button {
+			display: block;
+			width: 250px;
+			line-height: 24px;
+			margin: 0 auto;
+			color: #ffffff;
+			&:after {
+				display: none !important;
+			}
+		}
+		.vc_custom_1446576004416, .vc_custom_1447003878434 {
+			background-color: #f5f6f6;
+			overflow: hidden;
+			img {
+				max-width: none;
+			}
+		}
+		.wpb_row{
+			clear: both;
+		}
+	}
+	&.cms-how-it-works-buy-to-rent, &.cms-how-it-works-rent-a-bag{
+		.std{
+			.row{
+				img{
+					max-width: inherit;
+				}
+				@include mdmax($mdmax){
+					margin: 0 30px;
+				}
+				@include smmax($smmax){
+					p{  font-size: 18px;  }
+				}
+			}
+			p{
+				display: inline-block;
+				font-family: "MuseoSansRegular", sans-serif;
+				font-size: 26px;
+				line-height: 1.4;
+			}
+			span.arrow{
+				display: block;
+				width: 64px;
+				height: 50px;
+				background: url("https://www.rent-a-bag.club/skin/frontend/rentabag/default/images/hiw_buy-to-rent_arrow.png") no-repeat;
+				background-size: cover;
+			}
+			a.button{
+				letter-spacing: 1px;
+			}
+			.row + span.arrow{
+				margin: 30px auto;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	&.cms-how-it-works-buy-to-rent{
+		.std{
+			.row{
+				display: flex;
+				position: relative;
+				&:nth-child(1){
+					.wrap:first-child{  width: 710px;  }
+					.wrap:last-child{  width: 250px;  text-align: center;  }
+					//span.arrow{  	position: absolute;  bottom: 31px;  left: 0;  }
+					img{  display: inline-block;	}
+				}
+				&:nth-child(2){
+					.wrap:first-child{  width: 480px;  }
+					.wrap:last-child{  width: 50%;  }
+					p{ padding-left: 30px;  }
+				}
+				&:nth-child(4){  flex-direction: column;  }
+				&:nth-child(5){
+					justify-content: space-between;
+					margin-bottom: 30px;
+					.wrap:first-child{
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-end;
+						a{  margin: 0;  }
+						p{
+							margin: 0;
+							margin-top: 1em;
+						}
+					}
+				}
+				@include mdmax($mdmax){
+					&:nth-child(1){
+						.wrap:first-child{  width: 70%;  }
+						.wrap:last-child{  width: 30%;  }
+					}
+					&:nth-child(2){
+						.wrap:first-child{
+							width: 50%;
+							img{
+								max-width: 100% !important;
+							}
+						}
+					}
+				}
+				@include smmax($smmax){
+					&:nth-child(1){
+						flex-direction: column;
+						img{  float: right;  }
+						.wrap:first-child, .wrap:last-child{  width: 100%;  }
+					}
+					&:nth-child(2){
+						flex-direction: column;
+						img{  margin: 0 auto;  }
+						p{  padding: 0;  margin-top: 25px; }
+						.wrap:first-child, .wrap:last-child{  width: 100%;  }
+					}
+					&:last-child{
+						flex-direction: column-reverse;
+						align-items: center;
+						img{  margin-bottom: 25px;  }
+					}
+				}
+				@include xsmax($xsmax){
+					&:nth-child(2) img{  width: 100%;  }
+				}
+			}
+			img{  max-width: inherit;  }
+		}
+	}
+	&.cms-how-it-works-rent-a-bag{
+		.std{
+			.row{
+				display: flex;
+				position: relative;
+				&:nth-child(1){
+					.wrap:first-child{  width: 590px;  }
+					.wrap:last-child{
+						width: 370px;
+						text-align: center;
+					}
+					.arrow{
+						position: absolute;
+						left: 0;
+						bottom: 0;
+					}
+					img{  display: inline-block;  }
+				}
+				&:nth-child(2){
+					flex-direction: column;
+					margin: 20px 0;
+					img{
+						margin: 0 auto;
+						max-width: 640px;
+					}
+				}
+				&:last-child{
+					flex-direction: column;
+					margin-bottom: 30px;
+					a{  margin: 0;  }
+					p{
+						margin: 0;
+						margin-top: 1em;
+					}
+				}
+				&:nth-last-child(2){
+					img{  display: inline-block;  }
+					.wrap:first-child{  width: 660px;  }
+					.wrap:last-child{
+						width: 300px;
+						text-align: center;
+					}
+				}
+				@include mdmax($mdmax){
+					&:nth-child(2){
+						margin: 20px 30px;
+					}
+					&:nth-last-child(2){
+						.wrap:first-child{  width: 60%;  }
+						.wrap:last-child{  width: 40%;  }
+					}
+				}
+				@include smmax($smmax){
+					&:nth-child(1){
+						flex-direction: column;
+						align-items: flex-end;
+						.wrap:first-child, .wrap:last-child{  width: 100%;  }
+						.wrap:last-child{  text-align: center; }
+						img{  max-width: 100%; }
+					}
+					&:nth-child(2){
+						img{  width: 100%;  }
+					}
+					&:nth-last-child(2){
+						.wrap:first-child, .wrap:last-child{  width: 50%;  }
+						img{  max-width: 100%;  }
+					}
+				}
+				@include xsmax($xsmax){
+				  &:nth-child(1){
+						align-items: center;
+						span.arrow{
+							position: static;
+							margin: 15px auto;
+							transform: rotate(90deg);
+						}
+						img{  max-width: 100%;  }
+					}
+					&:nth-child(2){ img{  width: 130%; } }
+					&:nth-last-child(2){
+						flex-direction: column-reverse;
+						align-items: center;
+						img{  width: 261px;  margin-bottom: 30px; }
+						.wrap:first-child, .wrap:last-child{  width: 100%;  }
+					}
+
+					&:last-child{  align-items: center;  }
+				}
+				@include md(415){
+					&:nth-child(2){ img{  width: 200%; } }
+				}
+			}
+		}
+	}
+	&.cms-rewards-and-loyalty-points{
+		.std h1{
+			font-size: 47px;
+			font-weight: normal;
+			@include smmax($smmax){
+				font-size: 32px;
+			}
+			@include xsmax($xsmax){
+				font-size: 22px;
+			}
+		}
+		strong{  font-weight: normal;  }
+		strong.title{
+			display: inline-block;
+			margin-bottom: 50px;
+			vertical-align: middle;
+			font-weight: normal;
+			&:after{
+				content: '';
+				display: inline-block;
+				width: 18px;
+				height: 14px;
+				margin: -5px 10px 0;
+				background: url("https://www.rent-a-bag.club/skin/frontend/rentabag/default/images/hiw_buy-to-rent_arrow.png") no-repeat;
+				background-size: cover;
+				vertical-align: middle;
+			}
+			&:last-of-type:after{  display: none;  }
+			@include xsmax($xsmax){
+				font-size: 12px;
+				margin-bottom: 25px;
+			}
+		}
+		p{
+			&.title{  margin: 50px 0;  }
+			&.x_large{  font-size: 26px;  }
+			&.large{  font-size: 22px;  }
+			&.medium{  font-size: 21px;  }
+			@include smmax($smmax) {
+				&.title {  margin: 25px 0;  }
+			}
+			@include xsmax($xsmax){
+				&.x_large{  font-size: 14px;  }
+				&.large, &.medium{  font-size: 13px; }
+			}
+		}
+		.container{
+			display: flex;
+			align-items: flex-end;
+			margin-bottom: 50px;
+			clear: both;
+			overflow: hidden;
+			@include smmax($smmax){
+				flex-direction: column;
+				margin: 0;
+				.vc_col-sm-6{  margin-bottom: 25px; }
+			}
+		}
+		.vc_col-sm-6{
+			text-align: center;
+			padding: 0 15px;
+			@include smmax($smmax){
+				width: 100%;
+			}
+			p{
+				margin: 0;
+				&:last-of-type{  margin-bottom: 15px;  }
+			}
+		}
+		a.button{
+			padding: 15px 25px;
+			margin-bottom: 50px;
+			font-size: 18px;
+			@include smmax($smmax){  margin-bottom: 25px;  }
+			@include xsmax($xsmax){  padding: 10px 15px;  font-size: 12px;  }
+		}
+	}
+	&.customer-account .data-table.data-table {
+		margin-top: 0;
+	}
+	&.rent-search-index{
+		.renta-search{
+			padding: 15px 0;
+			text-align: center;
+			input[name="daterange"]{
+				display: inline-block !important;
+				vertical-align: top;
+				padding: 5px;
+				@include mdmax($mdmax){
+					width: 200px !important;
+					font-size: 13px;
+				}
+			}
+			.button{
+				width: 125px;
+				height: 50px;
+				margin-left: -10px;
+				border-radius: 0 5px 5px 0;
+				background: $color-main;
+				font-size: 16px;
+				&:hover{  background: $color-main-hover;  }
+			}
+		}
+	}
+	select[multiple="multiple"] {
+		@include scroll-bar;
+		option {
+			position: relative;
+			border: none !important;
+			@include border-bottom;
+		}
+	}
+	&.catalog-product-compare-index {
+		.minimal-price-link {
+			display: none;
+		}
+	}
+	&.catalogsearch-advanced-index {
+		.advanced-search {
+			border: none;
+		}
+	}
+}
+
+.cms-page-view .std li, .cms-no-route .std li,
+.cms-page-view .std p, .cms-no-route .std p {
+	//font-family: 'RobotoRegular', sans-serif;
+	font-style: normal;
+}
+
+.customer-account-login {
+	input[type=email], input[type=password] {
+		width: 270px;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+thead th, tbody th {
+	border-bottom: none !important;
+}
+
+.category-image {
+	display: none;
+}
+
+.category-description {
+	display: none;
+}
+ 
+//.data-table tbody td, .data-table tfoot td {
+//	font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+//}
+
+#contactForm {
+	textarea {
+		max-width: 365px;
+	}
+	.buttons-set {
+		margin-left: 0;
+		max-width: 365px;
+		border-top: none;
+	}
+}
+
+.catalogsearch-advanced-index {
+	.advanced-search {
+		border: none;
+	}
+}
+
+.page-title h1, .page-title h2, .product-name h1, .product-name .h1 {
+	border: none;
+}
+
+.buttons-set {
+	border-top: none;
+}
+
+.dashboard .box-head a {
+	padding: 0;
+}
+
+.registered-users button{
+	width: 270px;
+}

@@ -1,0 +1,56 @@
+.opc .section .step-title .number,
+.opc .section.allow.active .step-title .number,
+.no-touch .opc .section.allow:hover .step-title .number{
+  border-radius: 5px;
+}
+body.checkout-onepage-index{
+  .col2-right-layout a{  @include text-decoration;  }
+  .opc .section{
+		&.active .step-title{
+			border-bottom: none;
+		}
+		&.allow:not(.active){
+			.step-title:hover{
+			background: linear-gradient(to right, #ffffff, #f4f4f4, #ffffff);
+			}
+		}
+		.step-title{
+			border-top: none;
+			@include border-top;
+			a:after{  display: none;  }
+		}
+  }
+  .block-progress{
+		border-left: none;
+		position: relative;
+		@include border-left;
+  }
+}
+
+.opc{
+	&>li{  position: relative;  }
+	li#opc-review {
+		button.button{  float: none !important;  }
+		.please-wait{ @media (min-width: 600px) {  margin-top: -27px;  } }
+	}
+	.buttons-set{  text-align: center;
+		button.button{
+			min-width: 180px;
+			height: 40px;
+			float: none;
+			background: #fb1c5b !important;
+			border-radius: 5px;
+			@media (max-width: 700px){  float: right;  margin-right: 10px;  }
+		}
+	}
+	.please-wait{  float: left;  margin-right: -170px;
+		@media (max-width: 700px) {  margin-right: 0;  }
+	}
+	.back-link{
+		a{  padding: 5px 0;  }
+		@media (max-width: 700px){  display: block;  position: absolute;  top: 0;  right: 0;
+			a{  padding-right: 10px;  }
+		}
+	}
+	#review-buttons-container .f-left{  float: none;  width: 100%;  text-align: right;  }
+}

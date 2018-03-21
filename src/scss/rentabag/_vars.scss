@@ -1,0 +1,7 @@
+$box-shadow: 0 5px 25px -6px rgba(0, 0, 0, 0.5);
+$color-main: #816A47;//#FB1C5B;
+$color-main-hover: #715d40;
+$color-green: #5d5d5d;
+@mixin payment_sprite{
+	background: url(../images/payment_sprite_grey.png) no-repeat;
+}

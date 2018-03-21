@@ -1,0 +1,36 @@
+// rent notify
+{{template config_path="design/email/header"}} {{inlinecss file="email-inline.css"}}
+
+<h2>Dear customer,</h2>
+<p>You made an order on {{var orderDate}} number #{{var orderNum}}.</p>
+
+<p>You have ordered rent for "{{var goodsName}}" and payed it. <br />
+Your order will begin at <b>{{var rentStart}}</b>.</p>
+
+<p>Please, pay the pledge for this goods and we will send it for You in said date. <br />
+Deposit sum is <b>{{var pledge}}£</b>.</p>
+
+<p></p>
+<p style="text-align: center"><a href="{{var baseUrl}}rent/pledge/pay?o={{var orderId}}&g={{var prodId}}" style="display: inline-block; padding: 0 25px; line-height: 40px; font-size: 14px; color: #fff; border: 2px solid #abb820; background: #abb820; border-radius: 5px; text-align: center; text-transform: uppercase; text-decoration: none;">Go Payment</a></p>
+<p></p>
+<p>The whole deposit will be returned to you in total in accordance with our <a href="{{store url=""}}trendystash_terms_and_conditions/" target="_blank" title="TERMS &amp; CONDITIONS">T &amp; C</a> once the rent finishes and we receive the item back.</p>
+<p></p>
+<p>If you do not want to receive these notifications more - contact us and cancel the order, go to the <a href="{{var baseUrl}}contact">contact page</a>.</p>
+
+{{template config_path="design/email/footer"}}
+
+
+// rent refuse
+{{template config_path="design/email/header"}} {{inlinecss file="email-inline.css"}}
+
+	<h2>Dear customer,</h2>
+	<p>You made an order on {{var orderDate}} number #{{var orderNum}}.</p>
+
+	<p>You have ordered rent for "{{var goodsName}}" on <b>{{var rentStart}}</b>.</p>
+
+	<p>But You didn't make a pledge {{var pledge}}£. So, we have to refuse rent for You.</p>
+
+	<p></p>
+	<p>If there is some mistake, please, <a href="{{var baseUrl}}contact">contact us</a></p>
+
+{{template config_path="design/email/footer"}}

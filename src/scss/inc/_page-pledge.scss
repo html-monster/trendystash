@@ -1,0 +1,10 @@
+.h-pledge-info { margin-bottom: 40px;
+  &__img { display: inline-block; }
+  &__info { font-weight: bold;
+    span { display: inline-block; width: 130px; font-weight: normal; }
+  }
+}
+
+.l-frm-pledge {
+  &__go { margin-top: 20px; text-align: center; }
+}

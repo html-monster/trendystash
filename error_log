@@ -1,0 +1,99 @@
+[26-Jun-2017 04:45:11 UTC] PHP Fatal error:  Call to a member function getItemsCollection() on a non-object in /home/rentabag/public_html/app/design/frontend/rentabag/default/template/sales/order/items.phtml on line 28
+[26-Jun-2017 04:45:33 UTC] PHP Fatal error:  Call to a member function getItemsCollection() on a non-object in /home/rentabag/public_html/app/design/frontend/rentabag/default/template/sales/order/items.phtml on line 28
+[07-Jul-2017 05:33:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[20-Jul-2017 09:56:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[20-Jul-2017 16:55:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[29-Jul-2017 16:51:52 UTC] PHP Fatal error:  Cannot use object of type Mage_Core_Controller_Request_Http as array in /home/rentabag/public_html/app/code/local/Ebizmarts/SagePaySuite/Model/Observer/Sales.php on line 125
+[29-Jul-2017 16:52:07 UTC] PHP Fatal error:  Cannot use object of type Mage_Core_Controller_Request_Http as array in /home/rentabag/public_html/app/code/local/Ebizmarts/SagePaySuite/Model/Observer/Sales.php on line 125
+[31-Jul-2017 06:01:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[05-Aug-2017 07:43:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[10-Aug-2017 19:41:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/rentabag/public_html/app/design/frontend/rentabag/default/template/email/order/items/order/default.phtml on line 139
+[10-Aug-2017 19:45:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/rentabag/public_html/app/design/frontend/rentabag/default/template/email/order/items/order/default.phtml on line 139
+[12-Aug-2017 04:14:48 UTC] PHP Fatal error:  Call to a member function addToChildGroup() on a non-object in /home/rentabag/public_html/app/code/core/Mage/Core/Block/Abstract.php on line 815
+[12-Aug-2017 04:14:51 UTC] PHP Fatal error:  Call to a member function addToChildGroup() on a non-object in /home/rentabag/public_html/app/code/core/Mage/Core/Block/Abstract.php on line 815
+[21-Aug-2017 06:44:31 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'File '/home/rentabag/public_html/media/css' does not exists.' in /home/rentabag/public_html/lib/Varien/File/Transfer/Adapter/Http.php:96
+Stack trace:
+#0 /home/rentabag/public_html/get.php(205): Varien_File_Transfer_Adapter_Http->send('/home/rentabag/...')
+#1 /home/rentabag/public_html/get.php(165): sendFile('/home/rentabag/...')
+#2 {main}
+  thrown in /home/rentabag/public_html/lib/Varien/File/Transfer/Adapter/Http.php on line 96
+[25-Aug-2017 04:55:55 UTC] PHP Parse error:  syntax error, unexpected 'Url' (T_STRING) in /home/rentabag/public_html/app/code/local/Addweb/AdvReservation/Model/Observer.php on line 783
+[28-Aug-2017 07:10:45 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'File '/home/rentabag/public_html/media/css' does not exists.' in /home/rentabag/public_html/lib/Varien/File/Transfer/Adapter/Http.php:96
+Stack trace:
+#0 /home/rentabag/public_html/get.php(205): Varien_File_Transfer_Adapter_Http->send('/home/rentabag/...')
+#1 /home/rentabag/public_html/get.php(165): sendFile('/home/rentabag/...')
+#2 {main}
+  thrown in /home/rentabag/public_html/lib/Varien/File/Transfer/Adapter/Http.php on line 96
+[04-Sep-2017 07:20:44 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'File '/home/rentabag/public_html/media/css' does not exists.' in /home/rentabag/public_html/lib/Varien/File/Transfer/Adapter/Http.php:96
+Stack trace:
+#0 /home/rentabag/public_html/get.php(205): Varien_File_Transfer_Adapter_Http->send('/home/rentabag/...')
+#1 /home/rentabag/public_html/get.php(165): sendFile('/home/rentabag/...')
+#2 {main}
+  thrown in /home/rentabag/public_html/lib/Varien/File/Transfer/Adapter/Http.php on line 96
+[22-Sep-2017 07:24:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[20-Oct-2017 02:35:03 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144
+[21-Oct-2017 04:27:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2 "No such file or directory")' in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php:129
+Stack trace:
+#0 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(129): PDO->__construct('mysql:host=loca...', 'rentabag_magent...', '09$R3dB3pWlw', Array)
+#1 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Mysql.php(111): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#2 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(396): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#3 /home/rentabag/public_html/lib/Zend/Db/Adapter/Abstract.php(460): Varien_Db_Adapter_Pdo_Mysql->_connect()
+#4 /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php(238): Zend_Db_Adapter_Abstract->query('SET NAMES utf8', Array)
+#5 /home/rentabag/public_html/lib/Varien/Db/Adapter/Pdo/Mysql.php(504): Zend_Db_Adapter_Pdo_Abstract->query('SET NAMES utf8', Array)
+#6 /home/rentabag in /home/rentabag/public_html/lib/Zend/Db/Adapter/Pdo/Abstract.php on line 144

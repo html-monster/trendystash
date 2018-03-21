@@ -1,0 +1,14 @@
+
+\.idea/
+
+node_modules/
+
+var/
+
+_Source/
+
+_BCKUP/
+cache
+/_BCKP
+
+11/

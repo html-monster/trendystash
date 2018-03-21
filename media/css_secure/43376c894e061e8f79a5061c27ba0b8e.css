@@ -1,0 +1,426 @@
+.daterangepicker {
+    position: absolute;
+    color: inherit;
+    background: #fff;
+    border-radius: 4px;
+    width: 278px;
+    padding: 4px;
+    margin-top: 1px;
+    top: 100px;
+    left: 20px;
+    /* Calendars */ }
+.daterangepicker:before, .daterangepicker:after {
+    position: absolute;
+    display: inline-block;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: ''; }
+.daterangepicker:before {
+    top: -7px;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid #ccc; }
+.daterangepicker:after {
+    top: -6px;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent; }
+.daterangepicker.opensleft:before {
+    right: 9px; }
+.daterangepicker.opensleft:after {
+    right: 10px; }
+.daterangepicker.openscenter:before {
+    left: 0;
+    right: 0;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto; }
+.daterangepicker.openscenter:after {
+    left: 0;
+    right: 0;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto; }
+.daterangepicker.opensright:before {
+    left: 9px; }
+.daterangepicker.opensright:after {
+    left: 10px; }
+.daterangepicker.dropup {
+    margin-top: -5px; }
+.daterangepicker.dropup:before {
+    top: initial;
+    bottom: -7px;
+    border-bottom: initial;
+    border-top: 7px solid #ccc; }
+.daterangepicker.dropup:after {
+    top: initial;
+    bottom: -6px;
+    border-bottom: initial;
+    border-top: 6px solid #fff; }
+.daterangepicker.dropdown-menu {
+    max-width: none;
+    z-index: 3001; }
+.daterangepicker.single .ranges, .daterangepicker.single .calendar {
+    float: none; }
+.daterangepicker.show-calendar .calendar {
+    display: block; }
+.daterangepicker .calendar {
+    display: none;
+    max-width: 270px;
+    margin: 4px; }
+.daterangepicker .calendar.single .calendar-table {
+    border: none; }
+.daterangepicker .calendar th, .daterangepicker .calendar td {
+    white-space: nowrap;
+    text-align: center;
+    min-width: 32px; }
+.daterangepicker .calendar-table {
+    border: 1px solid #fff;
+    padding: 4px;
+    border-radius: 4px;
+    background: #fff; }
+.daterangepicker table {
+    width: 100%;
+    margin: 0; }
+.daterangepicker td, .daterangepicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    cursor: pointer; }
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+    background: #eee; }
+.daterangepicker td.week, .daterangepicker th.week {
+    font-size: 80%;
+    color: #ccc; }
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
+    background-color: #fff;
+    border-color: transparent;
+    color: #999; }
+.daterangepicker td.in-range {
+    background-color: rgba(129, 106, 71, 0.32);
+    border-color: transparent;
+    color: #000;
+    border-radius: 0; }
+.daterangepicker td.start-date {
+    border-radius: 4px 0 0 4px; }
+.daterangepicker td.end-date {
+    border-radius: 0 4px 4px 0; }
+.daterangepicker td.start-date.end-date {
+    border-radius: 4px; }
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #816A47;
+    border-color: transparent;
+    color: #fff; }
+.daterangepicker th.month {
+    width: auto; }
+.daterangepicker td.disabled, .daterangepicker option.disabled {
+    color: #CECBCB;
+    cursor: not-allowed;
+    text-decoration: line-through; }
+.daterangepicker select.monthselect, .daterangepicker select.yearselect {
+    font-size: 12px;
+    padding: 1px;
+    height: auto;
+    margin: 0;
+    cursor: default; }
+.daterangepicker select.monthselect {
+    margin-right: 2%;
+    width: 56%; }
+.daterangepicker select.yearselect {
+    width: 40%; }
+.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
+    width: 50px;
+    margin-bottom: 0; }
+.daterangepicker .input-mini {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    vertical-align: middle;
+    margin: 0 0 5px 0;
+    padding: 0 6px 0 28px;
+    width: 100%; }
+.daterangepicker .input-mini.active {
+    border: 1px solid #816A47;
+    border-radius: 4px; }
+.daterangepicker .daterangepicker_input {
+    position: relative; }
+.daterangepicker .daterangepicker_input i {
+    position: absolute;
+    left: 8px;
+    top: 8px; }
+.daterangepicker .calendar-time {
+    text-align: center;
+    margin: 5px auto;
+    line-height: 30px;
+    position: relative;
+    padding-left: 28px; }
+.daterangepicker .calendar-time select.disabled {
+    color: #ccc;
+    cursor: not-allowed; }
+
+.ranges {
+    font-size: 11px;
+    float: none;
+    margin: 4px;
+    text-align: left; }
+.ranges ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%; }
+.ranges li {
+    font-size: 13px;
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 4px;
+    color: #816A47;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    cursor: pointer; }
+.ranges li:hover {
+    background: #816A47;
+    border: 1px solid #816A47;
+    color: #fff; }
+.ranges li.active {
+    background: #816A47;
+    border: 1px solid #816A47;
+    color: #fff; }
+
+/*  Larger Screen Styling */
+@media (min-width: 564px) {
+    .daterangepicker {
+        width: auto; }
+    .daterangepicker .ranges ul {
+        width: 160px; }
+    .daterangepicker.single .ranges ul {
+        width: 100%; }
+    .daterangepicker.single .calendar.left {
+        clear: none; }
+    .daterangepicker.single .ranges, .daterangepicker.single .calendar {
+        float: left; }
+    .daterangepicker .calendar.left {
+        clear: left;
+        margin-right: 0; }
+    .daterangepicker .calendar.left .calendar-table {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; }
+    .daterangepicker .calendar.right {
+        margin-left: 0; }
+    .daterangepicker .calendar.right .calendar-table {
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; }
+    .daterangepicker .left .daterangepicker_input {
+        padding-right: 12px; }
+    .daterangepicker .calendar.left .calendar-table {
+        padding-right: 12px; }
+    .daterangepicker .ranges, .daterangepicker .calendar {
+        float: left; } }
+
+@media (min-width: 730px) {
+    .daterangepicker .ranges {
+        width: auto;
+        float: left; }
+    .daterangepicker .calendar.left {
+        clear: none; } }
+
+.dropdown-menu{
+    float: left;
+    min-width: 160px;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td{
+    padding: 5px;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+
+    src: url('http://cdn.jsdelivr.net/bootstrap/latest/fonts/glyphicons-halflings-regular.eot');
+    src: url('http://cdn.jsdelivr.net/bootstrap/latest/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('http://cdn.jsdelivr.net/bootstrap/latest/fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+    url('http://cdn.jsdelivr.net/bootstrap/latest/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('http://cdn.jsdelivr.net/bootstrap/latest/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('http://cdn.jsdelivr.net/bootstrap/latest/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-calendar:before {
+    content: "\e109";
+}
+.glyphicon-chevron-right:before {
+    content: "\e080";
+}
+.glyphicon-chevron-left:before {
+    content: "\e079";
+}
+#j2t-track1 {background-image:url(https://trendystash.com/skin/frontend/base/default/images/j2t-bg-fader.gif); background-repeat:no-repeat; width:209px; height:28px;}
+#j2t-handle1 {background-image:url(https://trendystash.com/skin/frontend/base/default/images/j2t-thumb-n.gif); background-repeat:no-repeat; width:17px; height:21px; cursor:move;}
+#j2t-track2 {background-image:url(https://trendystash.com/skin/frontend/base/default/images/j2t-bg-fader.gif); background-repeat:no-repeat; width:209px; height:28px;}
+#j2t-handle2 {background-image:url(https://trendystash.com/skin/frontend/base/default/images/j2t-thumb-orange.gif); background-repeat:no-repeat; width:17px; height:21px; cursor:pointer;}
+.j2t-loyalty-points {display:block; clear:both;}
+.rewards_point_cart em {color:#EB340A;}
+.form-list .field.j2t-rewardpoints-email {width: 280px;}
+.form-list .field.j2t-rewardpoints-email img {vertical-align: middle;}
+.order-items h2.front-rewardpoints-details-title, .page-print h2.front-rewardpoints-details-title {margin-top: 10px;}
+.j2t-loyalty-points img {display: inline; vertical-align: middle;}
+#rewardFormArea .login-area-reward-form { border: 1px solid #E2E2E2; padding: 5px; background-color: #F0F8FC; margin-top: 5px;}
+#rewardFormArea .innner-item-points {font-size: 11px;}
+.rewardpoints-msgs .success-msg {background-image: url(https://trendystash.com/skin/frontend/base/default/images/rewardpoints/rewardpoints.png);}
+
+ul.catalog-points-details {list-style: disc; margin-left: 30px; font-style: italic; color: #5E5E5E;}
+
+span.inline-catalog-points-details, span.catalog-points-details {display:list-item;}
+span.catalog-points-details {list-style: disc; margin-left: 30px; font-style: italic; color: #5E5E5E;}
+
+#my-rewardpoints-table {margin-bottom: 20px;}
+
+.block .j2t-content {margin: 0; padding: 5px 9px; clear:both;}
+.block .jiathis_style_32x32 {margin: 0; padding: 5px 9px;}
+
+
+.j2t-content input.input-text {width:98%;}
+
+#rewardFormArea p.onestepcheckout-numbers {
+    margin-top:20px;
+}
+
+@media only screen and (max-width: 1200px) {
+	.reward-data-table thead {
+		display: none;
+	}
+	.data-table.reward-data-table td {
+		display: block;
+		width: 100%;
+		border:none;
+		padding: 0px;
+	}
+	
+	.reward-data-table td[data-theme-label] {
+		padding-left: 15px;
+		margin-bottom: 6px;
+	}
+
+	.reward-data-table td[data-theme-label]:before {
+		content: attr(data-theme-label) ":";
+		padding-right: 5px;
+		font-weight: bold;
+	}
+	.form-list .field.j2t-rewardpoints-email, .form-list .field.j2t-rewardpoints-name {
+		width: 100%;
+	}
+}
+
+iframe#iframeRegCard { height:518px; width:100%; border:1px solid #666; padding: 0 20px;}
+
+iframe#sagepaydirectpro-iframe-post { height:500px; width:100%; /*border:1px solid #666;*/ border:none; }
+
+div#direct3d-logos { width:351px;margin:0 auto; margin-top:5px; }
+div#direct3d-logos img { padding-right:10px; }
+
+div.sagecardh1 h1 { display: inline; }
+div.sagecardh1 img { padding-top: 12px; padding-left: 10px; }
+
+select#sagepaytoken_start_yr, select#sagepaytoken_start, select#sagepaytoken_expiration_yr, select#sagepaytoken_expiration { width:125px; }
+select#sagepaytoken_start, select#sagepaytoken_expiration { margin-right: 10px; }
+
+form#frmRegCard input.cvv { width:3em !important; }
+
+.sidebar .sagepaysuite-logo { display:block; margin:10px 0; text-align:center; }
+.sidebar .sagepaysuite-logo a { float:none; }
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+/* display none until init */
+.owl-carousel{
+	display: none;
+	position: relative;
+	width: 100%;
+	-ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out;
+}
+	
+.owl-carousel .owl-item{
+	float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+	cursor: pointer;
+}
+.owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(https://trendystash.com/skin/frontend/rentabag/default/js/lib/owl-carousel/grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+

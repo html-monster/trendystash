@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="footer">
+            <remove name="footer_links"/>
+            <remove name="footer_links2"/>
+            <!--<reference name="head">
+                <action method="removeItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name></action>
+                &lt;!&ndash; For a JS in the skin folder &ndash;&gt;
+                <action method="removeItem"><type>skin_js</type><name>calendar/calendar-win2k-1.css</name></action>
+                &lt;!&ndash; For CSS in the skin folder &ndash;&gt;
+                <action method="removeItem"><type>skin_css</type><name>calendar/calendar-win2k-1.css</name></action>
+            </reference>-->
+            <block type="cms/block" name="footer_posts">
+                <action method="setBlockId"><block_id>footer_posts</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_news">
+                <action method="setBlockId"><block_id>footer_news</block_id></action>
+            </block>
+        </reference>
+    </default>
+    <catalog_product_view translate="label">
+    <reference name="head">
+            <action method="removeItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name></action>
+            <action method="removeItem"><type>js</type><name>calendar/calendar.js</name></action>
+            <action method="removeItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+        </reference>
+    </catalog_product_view>
+    <cms_index_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>js/lib/owl-carousel/owl.carousel.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owl-carousel/owl.carousel.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+        </reference>
+        <reference name="product_list">
+            <action method="setColumnCount"><count>4</count></action>
+        </reference>
+        <reference name="content">
+            <!-- home featured products -->
+            <remove name="product_list_toolbar_pager"/>
+            <block type="catalog/product_list" name="home.featured.products" after="-" template="catalog/product/list-home-featured.phtml" />
+            <!--<block  type="catalog/product_list" template="catalog/product/list.phtml" category_id="HomeProductsCategoryID"/>-->
+            <block type="page/html_head" name="footer.js" as="footer.js" template="page/html/footer-js.phtml">
+
+            </block>
+        </reference>
+    </cms_index_index>
+</layout>

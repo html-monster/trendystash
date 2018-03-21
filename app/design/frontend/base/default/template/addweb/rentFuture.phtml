@@ -1,0 +1,46 @@
+<div class="dashboard">
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <div class="box-account box-info">
+        <div class="box-head">
+            <h2><?php echo 'RENTED BAGS ARRIVING SOON' ?></h2>
+        </div>
+
+        <?php 
+$s1 = 'rentFuture.phtml='.var_export('rentFuture.phtml', 1)."\n";
+0||$notpr||file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/var/file', "\n--------------------\n".date("H:i:s")."\n".$s1, 0);//FILE_APPEND
+        echo $this->getChildHtml('customer_form_register'); ?>
+        <?php /*echo $this->getChildHtml('page/html_pager'); */?>
+
+        <?php /*$collection = $this->getCollection(); */?>
+        <?php $rents = $this->getCurrRents(); ?>
+        <table class="account-rent-table data-table">
+            <tr class="header">
+                <th>ID order</th>
+                <th>Product</th>
+                <th>Start</th>
+                <th>End</th>
+            </tr>
+            <?php foreach ($rents as $key => $val): ?>
+                <tr>
+                    <td><?= $val['id_order'] ?></td>
+                    <td>
+                        <a href="<?= $val['product'][2] ?>"><?= $val['product'][0] ?></a>
+                        <a href="<?= $val['product'][2] ?>"><img src="<?= $val['product'][1] ?>" alt=""></a>
+                    </td>
+                    <td><?= date('d/m/Y', strtotime($val['fdate'])) ?></td>
+                    <td><?= date('d/m/Y', strtotime($val['tdate'])) ?></td>
+                    <?php /*
+                    <td><?= $val->getIdOrder() ?></td>
+                    <td><?= $val->getSku() ?></td>
+                    <td><?= $val->getImg() ?></td>
+                    <td><?= $val->getFdate() ?></td>
+                    <td><?= $val->getTdate() ?></td>
+                    */ ?>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+
+        <?php echo $this->getPagerHtml() ?>
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+.cms-index-index .products-grid .ratings, .cms-index-index .products-grid .actions,
+.cms-index-noroute .products-grid .ratings, .cms-index-noroute .products-grid .actions{
+  display: block;
+}
+.price-box .minimal-price-link{
+  display: none;
+}
+select{
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+}
+.breadcrumbs{
+  position: relative;
+  z-index: 2;
+  a{
+    color: $color-main;
+    @include text-decoration;
+  }
+}
+.col-main .toolbar{
+  border: none;
+  background-color: transparent;
+}
+.catalog-category-view .main-container h1{  margin-left: 10px;  }
+.category-products{
+  .products-grid{
+    display: flex;
+    flex-wrap: wrap;
+    li.item:hover{
+      .product-image:after{
+        opacity: 0.5;
+      }
+      .add-to-links{
+        display: block;
+      }
+    }
+    .product-image{
+      border: none;
+      transition: 0.3s ease-out;
+      &:after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: rgb(255, 255, 255);
+        transition: all 0.3s ease-out;
+      }
+    }
+    .product-info{  position: static;  }
+  }
+  .add-to-links{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    box-shadow: 0 0 15px -6px rgba(0, 0, 0, 0.5);
+    background: #ffffff;
+    z-index: 10;
+    li{
+      &:first-child a{
+        background: url("../images/icon-wishlist.png") no-repeat center;
+        background-size: contain;
+        position: relative;
+        //&:after{
+        //  content: '';
+        //  display: block;
+        //  width: 15px;
+        //  height: 1px;
+        //  position: absolute;
+        //  left: 3px;
+        //  bottom: -7px;
+        //  background: #000000;
+        //}
+      }
+      //&:last-child a{
+      //  background: url("../images/icon-addcompare.png") no-repeat center;
+      //  background-size: contain;
+      //}
+    }
+    a{
+      width: 20px;
+      height: 18px;
+      margin: 5px;
+      text-indent: -9999px;
+    }
+  }
+  .products-list .action .button, .products-grid .actions .button{
+    width: 85%;
+    height: 38px;
+    line-height: 25px;
+  }
+  .count-container .amount--no-pages{  display: none;  }
+}
+.button, .cart-table .product-cart-actions .button,
+#co-shipping-method-form .buttons-set .button, .footer .button{
+  font-size: 12px;
+  background: #5d5d5d;
+  &:hover{  background: #3C3C3C;  }
+}
+
+.sorter > .view-mode{
+  display: none;
+}

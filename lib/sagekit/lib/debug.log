@@ -1,0 +1,6 @@
+[2016-10-18 06:05:30] :: Exception:SQLSTATE[HY000] [1045] Access denied for user 'vspuser'@'localhost' (using password: YES)
+#0 D:\Project\p-rentabag\sagekit\demo\helper\database.php(83): PDO->__construct('mysql:host=loca...', 'vspuser', '123')
+#1 D:\Project\p-rentabag\sagekit\demo\helper\database.php(192): HelperDatabase->__construct()
+#2 D:\Project\p-rentabag\sagekit\demo\app.php(37): HelperDatabase::getInstance()
+#3 D:\Project\p-rentabag\sagekit\demo\index.php(16): App->__construct(Object(SagepaySettings))
+#4 {main}

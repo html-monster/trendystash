@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<layout>
+    <customers_rent_current>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="advreservation/rentcollection" name="addweb_advreservation_content" template="addweb/rent.phtml" />
+        </reference>
+    </customers_rent_current>
+
+    <customers_rent_future>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="advreservation/rentfuture" name="addweb_advreservation_content" template="addweb/rentFuture.phtml" />
+        </reference>
+    </customers_rent_future>
+
+    <customers_rent_history>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="advreservation/renthistory" name="addweb_advreservation_content" template="addweb/rentHistory.phtml" />
+        </reference>
+    </customers_rent_history>
+
+    <customers_bytorent_index>
+        <update handle="customer_account" />
+        <!-- Mage_Customer -->
+        <reference name="my.account.wrapper">
+            <!--<block type="core/template" name="addweb_advreservation_content" template="addweb/rent.phtml"/>-->
+            <block type="advreservation/bytorent" name="addweb_advreservation_content" template="addweb/bytoRent.phtml" />
+            <!--<block type="core/text" name="addweb_advreservation_content">
+                <action method="setText"><text><![CDATA[
+                    <h1>Look at me!</h1>
+                ]]></text></action>
+            </block>-->
+        </reference>
+    </customers_bytorent_index>
+
+
+    <rent_search_index>
+        <reference name="content">
+            <block type="advreservation/rentsearch" name="addweb_advreservation_content" template="addweb/rentSearch.phtml" />
+        </reference>
+    </rent_search_index>
+
+
+    <rent_pledge_notify>
+        <reference name="content">
+            <block type="advreservation/rentpledge" name="addweb_advreservation_content" template="addweb/rentPledgeNotify.phtml" />
+        </reference>
+    </rent_pledge_notify>
+
+
+    <rent_pledge_pay>
+        <reference name="content">
+            <block type="advreservation/rentpledge" name="addweb_advreservation_content" template="addweb/rentPledgePay.phtml" />
+        </reference>
+    </rent_pledge_pay>
+
+
+    <rent_pledge_payresult>
+        <reference name="content">
+            <block type="advreservation/rentpledge" name="addweb_advreservation_content" template="addweb/rentPledgePayResult.phtml" />
+        </reference>
+    </rent_pledge_payresult>
+
+
+    <!--Заготовка под любой контроллер см. README-->
+    <rent_newssubscribe_success>
+        <reference name="content">
+            <block type="advreservation/newssubscribe" name="addweb_advreservation_content" template="addweb/newsSubscribeSuccess.phtml" />
+        </reference>
+    </rent_newssubscribe_success>
+
+<!--
+    <rentajax_pledgenotify_email>
+        <reference name="content">
+            &lt;!&ndash;<block type="core/template" name="addweb_advreservation_content" template="addweb/rent.phtml"/>&ndash;&gt;
+            <block type="advreservation/rentpledge" name="addweb_advreservation_content" template="addweb/rentPledgeEmailNotify.phtml" />
+        </reference>
+    </rentajax_pledgenotify_email>
+-->
+
+
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink">
+                <name>current_rent</name>
+                <path>customers/rent/current</path>
+                <label>My Current Rental</label>
+            </action>
+            <action method="addLink">
+                <name>rent_future</name>
+                <path>customers/rent/future</path>
+                <label>My Arriving Soon Rental</label>
+            </action>
+            <action method="addLink">
+                <name>rent_history</name>
+                <path>customers/rent/history</path>
+                <label>My Rental History</label>
+            </action>
+        </reference>
+    </customer_account>
+</layout>

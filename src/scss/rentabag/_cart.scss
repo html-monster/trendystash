@@ -1,0 +1,100 @@
+.cart {
+	a.edit{  @include text-decoration;  font-style: normal;  }
+	.button2 {
+		box-shadow: none;
+		text-decoration: none;
+		@include text-decoration;
+		&:active {  box-shadow: none;  }
+	}
+	.product-cart-info a{
+		font-size: 14px;
+	}
+	.product-cart-actions, .cart-forms, .cart-totals-wrapper {
+		a {
+			@include text-decoration;
+		}
+	}
+	.product-cart-actions {
+		//visibility: hidden;
+		p {
+			margin-right: 10px;
+		}
+	}
+	.button2 span, .button2 span span {
+		text-decoration: none;
+	}
+	.item-options dd {
+		padding: 0;
+	}
+	.product-cart-actions {
+		input {
+			vertical-align: top;
+		}
+		.button {
+			height: 30px;
+		}
+	}
+	.cart-links {
+		.link-wishlist{  display: none;  }
+		& > li > a {
+			display: inline-block;
+		}
+	}
+	.discount, .shipping, .cart-totals {
+		border: none;
+		background-color: transparent;
+	}
+	.shipping #co-shipping-method-form .sp-methods dd label {
+		border: none;
+		background-color: transparent;
+	}
+	.cart-table {
+		tr {
+			border-bottom: none;
+		}
+	}
+	.cart-totals table tbody tr:last-child td, .cart-totals table tbody tr:last-child th {
+		padding-bottom: 5px;
+	}
+	.cart-totals table tfoot td {
+		padding: 6px 5px;
+	}
+	.data-table tbody td .item-options {
+		margin-left: 0;
+	}
+	.terms {
+		padding: 5px 0;
+		input {
+			vertical-align: middle;
+			margin-top: -2px;
+		}
+	}
+	#country{  height: 40px;  }
+	.shipping{  display: none;  }
+}
+
+.minicart-wrapper {
+	.checkout-types {
+		display: none;
+	}
+	.minicart-actions .cart-link {
+		display: inline-block;
+		margin: 5px 0;
+		padding: 10px 15px;
+		background-color: #5d5d5d;
+		color: #ffffff;
+		line-height: 14px;
+		border-radius: 5px;
+		@include btn-shadow;
+		&:after {
+			display: none;
+		}
+	}
+}
+.checkout-types.bottom .paypal-logo a,
+.checkout-types.minicart .paypal-logo a{
+	&:after{
+		display: none;
+	}
+}
+input[name="points_to_be_used"]{  width: 100%;  }

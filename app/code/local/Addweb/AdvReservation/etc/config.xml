@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+      <Addweb_AdvReservation>
+        <version>2.0.0</version>
+      </Addweb_AdvReservation>
+    </modules>
+
+    <global>
+		<helpers>
+			<advreservation>
+				<class>Addweb_AdvReservation_Helper</class>
+			</advreservation>
+		</helpers>
+		<resources>
+			<advreservation_setup>
+				<setup>
+					<module>Addweb_AdvReservation</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</advreservation_setup>
+			<advreservation_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</advreservation_write>
+			<advreservation_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</advreservation_read>
+		</resources>
+		<blocks>
+			<advreservation>
+				  <class>Addweb_AdvReservation_Block</class>
+			</advreservation>
+			<core>
+				<rewrite>
+						<html_date>Addweb_AdvReservation_Block_Core_Html_Date</html_date>
+				</rewrite>
+			</core>
+			<adminhtml>
+				<rewrite>
+						<catalog_product_edit_tab_options_option>Addweb_AdvReservation_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_Option</catalog_product_edit_tab_options_option>
+				</rewrite>
+			</adminhtml>
+			<adminhtml>
+				<rewrite>
+						<catalog_product_edit_tab_options_type_date>Addweb_AdvReservation_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_Type_Date</catalog_product_edit_tab_options_type_date>
+				</rewrite>
+			</adminhtml>
+			<adminhtml>
+				<rewrite>
+						<catalog_product_edit_tab_options_type_select>Addweb_AdvReservation_Block_Adminhtml_Catalog_Product_Edit_Tab_Options_Type_Select</catalog_product_edit_tab_options_type_select>
+				</rewrite>
+			</adminhtml>
+			<catalog>
+				<rewrite>
+						<product_view_options_type_date>Addweb_AdvReservation_Block_Catalog_Product_View_Options_Type_Date</product_view_options_type_date>
+				</rewrite>
+			</catalog>
+			<catalog>
+				<rewrite>
+						<product_view_options_type_select>Addweb_AdvReservation_Block_Catalog_Product_View_Options_Type_Select</product_view_options_type_select>
+				</rewrite>
+			</catalog>
+			<xmlconnect>
+				<rewrite>
+						<catalog_product_options>Addweb_AdvReservation_Block_XmlConnect_Catalog_Product_Options</catalog_product_options>
+				</rewrite>
+			</xmlconnect>
+
+<!--
+            <checkout>
+                <rewrite>
+                    <cart_item_renderer>Addweb_AdvReservation_Block_Cart_Item_Renderer</cart_item_renderer>
+                </rewrite>
+            </checkout>
+-->
+		</blocks>
+		<models>
+			<advreservation>
+				  <class>Addweb_AdvReservation_Model</class>
+				  <!--<resourceModel>advreservation_mysql4</resourceModel>-->
+				  <resourceModel>advreservation_resource</resourceModel>
+			</advreservation>
+
+			<!--<advreservation_mysql4>-->
+			<advreservation_resource>
+				<!--<class>Addweb_AdvReservation_Model_Mysql4</class>-->
+				<class>Addweb_AdvReservation_Model_Resource</class>
+				<entities>
+					<rent>
+						<table>adv_rent</table>
+					</rent>
+				</entities>
+			</advreservation_resource>
+
+			<catalog>
+					<rewrite>
+							<product_option_type_date>Addweb_AdvReservation_Model_Catalog_Product_Option_Type_Date</product_option_type_date>
+					</rewrite>
+			</catalog>
+			<catalog>
+					<rewrite>
+							<product_option_type_select>Addweb_AdvReservation_Model_Catalog_Product_Option_Type_Select</product_option_type_select>
+					</rewrite>
+			</catalog>
+			<catalog>
+					<rewrite>
+							<product_option>Addweb_AdvReservation_Model_Catalog_Product_Option</product_option>
+					</rewrite>
+			</catalog>
+			<catalog_resource>
+					<rewrite>
+							<product_option>Addweb_AdvReservation_Model_Catalog_Resource_Product_Option</product_option>
+					</rewrite>
+			</catalog_resource>
+
+
+            <sales>
+                <rewrite>
+                    <order>Addweb_AdvReservation_Model_Order</order>
+                </rewrite>
+            </sales>
+		</models>
+		<events>
+			<checkout_cart_product_add_after> <!-- identifier of the event we want to catch -->
+				<observers>
+					<checkout_cart_product_add_after_handler> <!-- identifier of the event handler -->
+					  <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+					  <class>advreservation/observer</class> <!-- observers class alias -->
+					  <method>modifyCalulatedCustomOption</method>  <!-- observer's method to be called -->
+					  <args></args> <!-- additional arguments passed to observer -->
+					</checkout_cart_product_add_after_handler>
+				</observers>
+			</checkout_cart_product_add_after>
+			<checkout_cart_add_product_complete> <!-- identifier of the event we want to catch -->
+				<observers>
+					<checkout_cart_add_product_complete_handler> <!-- identifier of the event handler -->
+					  <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+					  <class>advreservation/observer</class> <!-- observers class alias -->
+					  <method>addProductAfter</method>  <!-- observer's method to be called -->
+					  <args></args> <!-- additional arguments passed to observer -->
+					</checkout_cart_add_product_complete_handler>
+				</observers>
+			</checkout_cart_add_product_complete>
+			<checkout_cart_product_update_after> <!-- identifier of the event we want to catch -->
+				<observers>
+					<checkout_cart_product_update_after_handler> <!-- identifier of the event handler -->
+					  <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+					  <class>advreservation/observer</class> <!-- observers class alias -->
+					  <method>updatePriceCustomization</method>  <!-- observer's method to be called -->
+					  <args></args> <!-- additional arguments passed to observer -->
+					</checkout_cart_product_update_after_handler>
+				</observers>
+			</checkout_cart_product_update_after>
+
+			<!-- Add custom handlers -->
+			<sales_order_save_commit_after>
+				<observers>
+					<sales_order_save_commit_after_handler>
+						<type>model</type>
+						<class>advreservation/observer</class>
+						<method>onSalesOrderSaveCommitAfter</method>
+					</sales_order_save_commit_after_handler>
+				</observers>
+			</sales_order_save_commit_after>
+
+			<checkout_cart_product_add_after>
+				<observers>
+					<checkout_cart_product_add_before_handler>
+						<class>advreservation/observer</class>
+						<method>onCheckoutCartProductAddAfter</method>
+					</checkout_cart_product_add_before_handler>
+				</observers>
+			</checkout_cart_product_add_after>
+
+			<checkout_cart_product_update_after>
+			  <observers>
+				<checkout_cart_product_update_after_handler>
+					<!--<type>singleton</type>-->
+					<class>advreservation/observer</class>
+					<method>onCheckoutCartProductAddAfter</method>
+				</checkout_cart_product_update_after_handler>
+			  </observers>
+			</checkout_cart_product_update_after>
+
+			<catalog_product_load_after>
+				<observers>
+					<catalog_product_load_after_handler>
+						<class>advreservation/observer</class>
+						<method>onCatalogProductLoadAfter</method>
+					</catalog_product_load_after_handler>
+				</observers>
+			</catalog_product_load_after>
+
+			<sales_order_save_after>
+				<observers>
+					<cms>
+						<type>advreservation/observer</type>
+						<class>advreservation/observer</class>
+						<method>onCmsControllerRouterMatchBefore</method>
+					</cms>
+				</observers>
+			</sales_order_save_after>
+
+			<!--model_save_after-->
+<!--
+			<newsletter_subscriber_save_commit_after>
+				<observers>
+					<newsletter_subscriber_save_commit_after_handler>
+						<type>advreservation/observer</type>
+						<class>advreservation/observer</class>
+						<method>onNewsletterSubscriberSaveCommitAfter</method>
+					</newsletter_subscriber_save_commit_after_handler>
+				</observers>
+			</newsletter_subscriber_save_commit_after>
+-->
+
+<!--
+			<controller_action_layout_load_before>
+				<observers>
+					<controller_action_layout_load_before_handler>
+						<type>advreservation/observer</type>
+						<class>advreservation/observer</class>
+						<method>onControllerActionLayoutLoadBefore</method>
+					</controller_action_layout_load_before_handler>
+				</observers>
+			</controller_action_layout_load_before>
+-->
+		</events>
+		<catalog>
+			<product>
+				<options>
+					<custom>
+						<groups>
+							<select translate="label" module="advreservation">
+								<label>Select</label><!-- Product Custom option label -->
+								<render>advreservation/adminhtml_catalog_product_edit_tab_options_type_select</render>
+								<types>
+									<adults translate="label" module="advreservation">
+										<label>Adults Select</label><!-- Add custom option value -->
+									</adults>
+									<childs translate="label" module="advreservation">
+										<label>Childs Select</label><!-- Add custom option value -->
+									</childs>
+									<reserve_type translate="label" module="advreservation">
+										<label>Reserve Type</label><!-- Add custom option value -->
+									</reserve_type>
+								</types>
+							</select>
+							<date translate="label" module="advreservation">
+							  <label>Date</label><!-- Product Custom option label -->
+							  <render>advreservation/adminhtml_catalog_product_edit_tab_options_type_date</render>
+							  <types>
+									<from_date translate="label" module="advreservation">
+										<label>Start Date</label><!-- Add custom option value -->
+									</from_date>
+									<to_date translate="label" module="advreservation">
+										<label>End Date</label><!-- Add custom option value -->
+									</to_date>
+							  </types>
+							</date>
+						</groups>
+					</custom>
+				</options>
+			</product>
+		</catalog>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <addweb_advreservation module="Addweb_AdvReservation">
+                    <file>addweb/advreservation.xml</file><!--Addweb_AdvReservation module frontend xml file -->
+                </addweb_advreservation>
+            </updates>
+
+
+            <!-- Vlasakh-->
+			<updates>
+                <adv_rent module="Addweb_AdvReservation">
+                    <file>addweb/adv_rent.xml</file>
+                </adv_rent>
+            </updates>
+        </layout>
+		 <routers>
+			<checkout>
+				<use>standard</use>
+				<args>
+					<modules>
+						<Addweb_AdvReservation before="Mage_Checkout">Addweb_AdvReservation_Checkout</Addweb_AdvReservation>
+					</modules>
+				</args>
+			</checkout>
+
+		 	<!-- Vlasakh -->
+            <customers>
+                <use>standard</use>
+                <args>
+                    <module>Addweb_AdvReservation</module>
+                    <frontName>customers</frontName>
+                </args>
+            </customers>
+            <rent>
+                <use>standard</use>
+                <args>
+                    <module>Addweb_AdvReservation</module>
+                    <frontName>rent</frontName>
+                </args>
+            </rent>
+
+             <!-- Subscribe -->
+            <newsletter>
+                <args>
+                    <modules>
+                        <addweb_advreservation before="Mage_Newsletter">Addweb_AdvReservation</addweb_advreservation>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+     </frontend>
+
+
+	<!-- Vlasakh -->
+	<stores>
+		<admin>
+			<design>
+				<package>
+					<name>Adv_rent</name>
+				</package>
+				<theme>
+					<default>rentabag</default>
+				</theme>
+			</design>
+		</admin>
+	</stores>
+<!--
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Addweb_AdvReservation before="Mage_Adminhtml">Addweb_AdvReservation_Adminhtml</Addweb_AdvReservation>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+-->
+
+	<adminhtml>
+		<layout>
+			<updates>
+				<adv_rent module="Addweb_AdvReservation">
+					<file>addweb/adv_rent_adm.xml</file>
+				</adv_rent>
+			</updates>
+		</layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <foo_bar before="Mage_Adminhtml">Addweb_AdvReservation_Adminhtml</foo_bar>
+                        <!--<addweb_advreservation before="Mage_Adminhtml">Addweb_AdvReservation_Adminhtml</addweb_advreservation>-->
+                        <!--<Addweb_AdvReservation before="Mage_Adminhtml">Addweb_AdvReservation</Addweb_AdvReservation>-->
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

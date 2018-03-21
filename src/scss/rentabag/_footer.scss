@@ -1,0 +1,113 @@
+.footer-container {
+	padding: 0 30px;
+}
+
+.footer {
+	border: none !important;
+	@include mdmax($mdmax) {
+		text-align: center;
+	}
+	@include xsmax($xsmax) {
+		text-align: left;
+	}
+	.block-title {
+		border: none !important;
+		@include mdmax($mdmax) {
+			text-align: left;
+		}
+	}
+	.links {
+		@include mdmin($mdmin){
+			width: 18%;
+		}
+		//position: relative;
+		//@include mdmin($mdmin){
+		//  width: 20%;
+		//  padding-right: 70px;
+		//  &:after{
+		//	content: '';
+		//	display: block;
+		//	height: 100%;
+		//	width: 1px;
+		//	margin-top: 0;
+		//	background: linear-gradient(to top, #ffffff, #ABABAB, #ffffff);
+		//	position: absolute;
+		//	top: 0;
+		//	right: 70px;
+		//  }
+		//  &:last-of-type{
+		//	&:after{
+		//	  display: none;
+		//	}
+		//  }
+		//}
+		.title{  display: block;  padding-bottom: 12px;  }
+		.payments{   display: flex; justify-content: flex-start; flex-wrap: wrap;
+			li{
+				width: 40px;
+				height: 25px;
+				margin: 0 5px 8px 0;
+				padding: 0;
+				@include payment_sprite;
+				background-size: 450%;
+			}
+			.visa{  background-position: -3px -4px;  }
+			.visa_electron{  background-position: -94px -4px;  }
+			.master_card{  background-position: -1px -41px;  }
+			.maestro{  background-position: -47px -40px;  }
+			.american_express{  background-position: -93px -39px;  }
+		}
+		.sharing-links{ display: flex; justify-content: flex-start;
+			li{  margin-right: 15px;  padding: 0;  }
+			a{ display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid #000;
+				&:hover{ border-color: $color-main; }
+				&:after{ display: none; }
+			}
+		}
+		.ssl_certificate{  width: 75px;  margin-top: 15px;  }
+		@include mdmax($mdmax) {
+			display: inline-block;
+			float: none;
+			vertical-align: top;
+			text-align: left;
+		}
+		@include xsmax($xsmax) {
+			address {
+				text-align: left;
+			}
+		}
+		address {
+			margin: 0;
+			padding: 0;
+			color: #636363;
+			&:before {
+				display: none;
+			}
+		}
+		li{  word-break: normal;  }
+	}
+	@include border-top;
+	.block-subscribe {
+		.button {
+			height: 40px !important;
+			margin-left: -5px;
+			background: $color-main;
+			border-radius: 0 5px 5px 0;
+			&:hover{  background: $color-main-hover;  }
+			@include btn-shadow;
+		}
+	}
+	address {
+		position: relative;
+		border: none !important;
+		@include border-top;
+	}
+	a {
+		transition: 0.4s ease-out;
+		@include text-decoration;
+	}
+	//&, .button{  font-family: "RobotoRegular", sans-serif; }
+	&, .block-title, address {
+		color: #636363;
+	}
+}

@@ -1,0 +1,64 @@
+body {
+	//font-family: "RobotoRegular", sans-serif;
+	@media only screen and (min-width: 320px) {
+		overflow-x: hidden;
+	}
+	span, a {
+		&:active, &:focus {
+			outline: none;
+		}
+	}
+	.price-box .price {
+		color: $color-green;
+	}
+	span.price {
+		color: $color-green;
+	}
+	h1, .block-title h2, .block-title h3, .block-title strong, label, .block-title small {
+		//font-family: "RobotoBold", sans-serif;
+	}
+	.block-title h2, .block-title h3, .block-title strong {
+		color: #636363;
+	}
+	.input-text, textarea {
+		min-height: 40px;
+		border-radius: 5px !important;
+		border: 1px solid $color-main;
+		//box-shadow: 0 0 0 0 $color-main;
+		//transition: 0.3s ease;
+		&:focus {
+			outline: none;
+			//	border: 1px solid $color-main;
+			//	box-shadow: 0 0 8px 0 $color-main;
+		}
+	}
+	#newsletter{
+		min-height: 40px;
+	}
+	.button, .cart-table .product-cart-actions .button, #co-shipping-method-form .buttons-set .button, .footer .button {
+		//border-radius: 5px;
+	}
+	button, button.button.btn-cart, .button {
+		@include btn-shadow;
+	}
+	.search-button {
+		box-shadow: none;
+	}
+	.btn-remove, .btn-remove2, .btn-previous {
+		border: none;
+		background: none;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+	.btn-remove:after {
+		content: '';
+		display: block;
+		height: 20px;
+		background: url("../images/close-icon-red.png") no-repeat center;
+		background-size: 10px 10px;
+	}
+	.product-image, .no-touch .product-img-box .product-image:not(.zoom-available):hover {
+		border: none;
+	}
+}

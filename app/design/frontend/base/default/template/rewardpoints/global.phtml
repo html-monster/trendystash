@@ -1,0 +1,11 @@
+
+<?php if (Mage::getSingleton('customer/session')->isLoggedIn() && Mage::getSingleton('customer/session')->getCustomer()->getRewardpointsAvailable()
+        && $this->canShowPoints()):?>
+<script type="text/javascript">
+  document.observe("dom:loaded", function() {
+    $('j2t-toplink-login').insert({after: ' <a class="top.link.reward.points" href="<?php echo $this->getUrl('rewardpoints/index/points');?>" title="Your points">You have <?php echo $this->__('%s points', (int)Mage::getSingleton('customer/session')->getCustomer()->getRewardpointsAvailable());?></a>'});
+    $('reward-point-after').insert({after: ' <a class="top.link.reward.points" href="<?php echo $this->getUrl('rewardpoints/index/points');?>" title="Your points">You have <?php echo $this->__('%s points', (int)Mage::getSingleton('customer/session')->getCustomer()->getRewardpointsAvailable());?></a>'});
+    $('reward-mobile').insert({after: ' <a class="top.link.reward.points" href="<?php echo $this->getUrl('rewardpoints/index/points');?>" title="Your points"><?php echo $this->__('%s points', (int)Mage::getSingleton('customer/session')->getCustomer()->getRewardpointsAvailable());?></a>'});
+  });
+</script>
+<?php endif;?>

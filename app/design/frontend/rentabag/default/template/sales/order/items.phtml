@@ -1,0 +1,91 @@
+<?php
+/**
+ * Order items block
+ *
+ * @author Vlasakh
+ */
+?>
+<?php  list($_order, $pledges) = $this->getOrder() ?>
+
+<table class="data-table linearize-table-large" id="my-orders-table" summary="<?php echo $this->__('Items Ordered') ?>">
+    <col />
+    <col width="1" />
+    <col width="1" />
+    <col width="1" />
+    <col width="1" />
+    <thead>
+        <tr>
+            <th><?php echo $this->__('Product') ?></th>
+<!--            <th>--><?php //echo $this->__('SKU') ?><!--</th>-->
+            <th class="a-right"><?php echo $this->__('Price per day') ?></th>
+            <th class="a-center"><?php echo $this->__('Days') ?></th>
+            <th class="a-right"><?php echo $this->__('Subtotal') ?></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <?php echo $this->getChildHtml('order_totals') ?>
+    </tfoot>
+        <?php $_items = $_order->getItemsCollection(); ?>
+        <?php $_index = 0; ?>
+            <?php $_count = $_items->count(); ?>
+        <?php foreach ($_items as $_item): ?>
+        <?php if ($_item->getParentItem()) continue; ?>
+        <tbody>
+            <?php echo $this->getItemHtml($_item) ?>
+            <?php // Pledge payment form
+                $s1 = '$pledges='.var_export($pledges, 1)."\n";
+                0||$notpr||file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/11/file', "\n--------------------\n".date("H:i:s")."\n".$s1, 0);//FILE_APPEND
+//            0||$notpr||print  "<pre> \$pledges :".$s1
+//                  .$s1 . print_r($pledges, 1)."\n"
+//                  ."</pre>";$notpr;
+                if( is_array($pledges[$id = $_item->getProductId()]) && !($pledges[$id]['price'] > 0) && $pledges[$id]['pledge'] > 0 && !$pledges[$id]['expired'] && !$pledges[$id]['greaterT7'] ): ?>
+                <?php $flag = true ?>
+                <tr class="pledge">
+                    <td colspan="5">
+                        <div>
+                            <form action="<?= Mage::helper('advreservation')->getSagePayUrl() ?>" method="post" class="l-frm-pledge" target="">
+                                <?php
+                                foreach ($this->getSagePayPledgeFormData($_order, $pledges[$id])['data'] as $key => $value) {
+                                    ?>
+                                    <input type="hidden" name="<?php echo $key; ?>"
+                                           value="<?php echo htmlentities($value); ?>"/>
+                                <?php } ?>
+                                <span class="pledge-sum">Deposit*: &pound;<b><?= $pledges[$id]['pledge'] ?></b></span><button class="btn-01">Start payment</button>
+<!--                                <input type="submit" value="Proceed to Form registration"/>-->
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <?php // pledge payed successfully
+                elseif( is_array($pledges[$id = $_item->getProductId()]) && $pledges[$id]['price'] > 0 && $pledges[$id]['pledge'] > 0 ): ?>
+                <tr class="pledge">
+                    <td colspan="5">
+                        <div>
+                            <span class="pledge-sum" style="margin-right: 0;">Deposit: &pound;<b><?= $pledges[$id]['pledge'] ?></b> payed (<?= $pledges[$id]['pldate'] ?>)</span>
+                        </div>
+                    </td>
+                </tr>
+            <?php endif; ?>
+            <?php if($this->helper('giftmessage/message')->getIsMessagesAvailable('order_item', $_item) && $_item->getGiftMessageId()): ?>
+                <tr class="border<?php echo ($_index++ > $_count ?' last':'') ?>" id="order-item-gift-message-<?php echo $_item->getId() ?>" style="display:none;">
+                    <?php $_giftMessage=$this->helper('giftmessage/message')->getGiftMessageForEntity($_item); ?>
+                    <td class="gift-message-row" colspan="7">
+                        <a href="#" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Close')) ?>" onclick="return giftMessageToogle('<?php echo $_item->getId() ?>');" class="btn-close"><?php echo $this->__('Close') ?></a>
+                        <dl class="gift-message">
+                            <dt><strong><?php echo $this->__('From:') ?></strong> <?php echo $this->escapeHtml($_giftMessage->getSender()) ?></dt>
+                            <dt><strong><?php echo $this->__('To:') ?></strong> <?php echo $this->escapeHtml($_giftMessage->getRecipient()) ?></dt>
+                            <dd><?php echo $this->helper('giftmessage/message')->getEscapedGiftMessage($_item) ?></dd>
+                        </dl>
+                    </td>
+                </tr>
+            <?php endif ?>
+        </tbody>
+        <?php endforeach; ?>
+</table>
+
+<?php if( $flag ): ?>
+    <br />
+    <p class="p"><b>* Deposit sum was not payed. Please, pay deposit for goods, and we would send You this goods at specified time. Deposit sum will be returned to You after rent was ended.</b></p>
+<?php endif; ?>
+
+<script type="text/javascript">decorateTable('my-orders-table', {'tbody' : ['odd', 'even'], 'tbody tr' : ['first', 'last']})</script>

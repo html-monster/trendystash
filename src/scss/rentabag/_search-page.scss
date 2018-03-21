@@ -1,0 +1,9 @@
+.renta-search-wrapper{
+	.box-account{  border-bottom: none;  }
+	.box-head{  position: relative;
+		padding: 0; border: none;
+		h2{  display: block;  font-size: 18px;  text-align: center; @include border-bottom;  }
+	}
+	.category-products{  position: relative;  @include border-bottom;  }
+	.pager{  padding: 10px 0;  margin: 0;  }
+}
