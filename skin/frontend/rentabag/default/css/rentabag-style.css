@@ -1320,7 +1320,7 @@ body .product-image, body .no-touch .product-img-box .product-image:not(.zoom-av
 
 #header-nav .nav-primary li a { /*font-family: "RobotoRegular", sans-serif;*/ border: none; color: #ffffff; transition: 0.5s ease-out; }
 
-#header-nav .nav-primary li ul li a { color: #636363; text-transform: uppercase; line-height: 40px; font-size: 14px; }
+#header-nav .nav-primary li ul li a { color: #636363; text-transform: uppercase; line-height: 35px; font-size: 12px; }
 
 @media only screen and (min-width: 771px) { #header-nav .nav-primary li.menu-active ul { height: auto; min-height: 50px; top: 30px; opacity: 1; }
   #header-nav .nav-primary li ul { display: block !important; height: 0; min-height: 0; top: 25px; background-color: #ffffff; border: none; box-shadow: 0 5px 25px -6px rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s ease-out; overflow: hidden; }
